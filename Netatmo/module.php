@@ -171,7 +171,7 @@ require_once (__ROOT__.'/Netatmo/src/Netatmo/autoload.php');
         			}
     			}			
 		}
-		IPS_LogMessage('Netatmo_Modul', $echoString);
+		//IPS_LogMessage('Netatmo_Modul', $echoString);
 		echo "done...siehe Logs";
 	}
 	
@@ -200,12 +200,12 @@ require_once (__ROOT__.'/Netatmo/src/Netatmo/autoload.php');
 		catch(NAClientException $ex)
 		{
 			 $this->handleError("An error occured while retrieving data: ". $ex->getMessage()."\n", TRUE);
-			 IPS_LogMessage('Netatmo_Modul', "An error occured while retrieving data: ". $ex->getMessage()."\n");
+			 //IPS_LogMessage('Netatmo_Modul', "An error occured while retrieving data: ". $ex->getMessage()."\n");
 		}
 		if(empty($data['devices']))
 		{
     			$this->echoLog( 'No devices affiliated to user');
-    			IPS_LogMessage('Netatmo_Modul', $echoString);
+    			//IPS_LogMessage('Netatmo_Modul', $echoString);
 		}
 		else
 		{
@@ -224,7 +224,7 @@ require_once (__ROOT__.'/Netatmo/src/Netatmo/autoload.php');
                 		$this->saveModules($module);
         		}
 		}
-		IPS_LogMessage('Netatmo_Modul', "GetData finished successfully");
+		//IPS_LogMessage('Netatmo_Modul', "GetData finished successfully");
 	}
 
 	private function getModuleName($device)
@@ -498,7 +498,7 @@ require_once (__ROOT__.'/Netatmo/src/Netatmo/autoload.php');
 
 	private function handleError($message, $exit = FALSE)
 	{
-		IPS_LogMessage('Netatmo_ERROR', $message);
+		//IPS_LogMessage('Netatmo_ERROR', $message);
     		if($exit)
     		{
         		exit(-1);
